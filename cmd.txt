@@ -1,0 +1,14 @@
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout nginx-selfsigned.key -out nginx-selfsigned.crt
+
+
+this is the command to generate the ssl certs for our use case
+
+-openssl req => initiates a certificate request generation process
+-x509 => Telss openssl to output a certificate in this standard certificate format
+-nodes => tells openssl not to encrypt the private key with a passphrase
+-days 365 =? specifies validity period of the certificate, in this case , 1 year
+-newkey rsa:2048 => creates a 2048 bit RSA key pair
+    RSA = most common public key encryption algo
+-keyout nginx-selfsigned.key => specifies the outputfile for the generated private key
+-out nginx-selfsigned.crt => specifiesthe output file for the selfsigned certificate
+    => contains public key
